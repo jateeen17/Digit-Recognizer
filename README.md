@@ -1,4 +1,4 @@
-DigitRecognizer in python using Tensorflow
+# DigitRecognizer in python using Tensorflow
 
 INSTALLATION
 
