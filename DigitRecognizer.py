@@ -2,7 +2,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
 
-mnist = tf.keras.datasets.mnist #Get the data
+mnist = tf.keras.datasets.mnist 
 
 (x_train, y_train),(x_test, y_test) = mnist.load_data()
 
@@ -23,7 +23,6 @@ model.fit(x_train,y_train,epochs=3) #Train model 1 time.
 #Show the RGB codes
 #print(x_train[0])
 
-#Show the loss and accuracy.
 val_loss,val_acc = model.evaluate(x_test,y_test)
 print(val_loss,val_acc)
 
@@ -31,10 +30,7 @@ model.save('epic_num_reader.model.h5')
 new_model = tf.keras.models.load_model('epic_num_reader.model')
 predictions = new_model.predict([x_test])
 
-#Convert to understandable form.
 print("The number is : ",np.argmax(predictions[10])) 
-#If you want change the test and prediction numbers
 
-#Show the image
 plt.imshow(x_test[10]) 
 plt.show()
